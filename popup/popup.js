@@ -1,3 +1,22 @@
+/*
+ * Copyright (C) 2024 [Ayama].
+ * Author: Ayama (https://github.com/1818180)
+ * This file is part of [contextsaver].
+ *
+ * [contextsaver] is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * [contextsaver] is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with [contextsaver]. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 
 //返回anno所有数据
 const objread = 'readlater';
@@ -115,7 +134,7 @@ function getTodayTimeBound() {
 
 function getTodayDate() {
   const date = new Date();
-  const month = (date.getMonth() + 1).toString().padStart(2, '0'); // 月份从0开始
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
   const day = date.getDate().toString().padStart(2, '0');
   return `${month}-${day}`;
 }
@@ -178,8 +197,6 @@ let settingindex = 'close';
 const settingbtn = document.querySelector('.logo .btn');
 const settingpanel = document.querySelector('.setting-panel');
 settingpanel.style.display = 'none';
-// settingpanel.style.height = `0px`;
-// settingpanel.style.opacity = 0;
 settingbtn.addEventListener('click', ()=> {
   displayControl();
 })
@@ -220,8 +237,8 @@ function exportDataAsJSON(data) {
 function downloadInBrowser(url,name) {
   chrome.downloads.download({
     url: url,
-    filename: name,  // 自定义文件名
-    saveAs: false   // 询问用户保存路径
+    filename: name,
+    saveAs: false
   });
 }
 
@@ -237,7 +254,6 @@ exportBtn.addEventListener('click', ()=> {
   getAllAnnoData().then((allanno)=> {
     const url = data2url(allanno);
     downloadInBrowser(url,'contextsaver_export_anno.json');
-    //导出后进行提示
     showNotice(`成功导出标注数据！共${allanno.length}条`);
   })
   setTimeout(() => {
@@ -254,7 +270,7 @@ importBtn.addEventListener('click', ()=> {
   //导入文件
   const fileInput = document.createElement('input');
   fileInput.type = 'file';
-  fileInput.accept = '.json'; // 限制文件类型为 JSON 或文本文件
+  fileInput.accept = '.json';
   fileInput.addEventListener('change', (event) => {
     const file = event.target.files[0];
     function wrongDocument() {
@@ -266,21 +282,17 @@ importBtn.addEventListener('click', ()=> {
       reader.onload = function () {
         try {
           const data = JSON.parse(reader.result);
-          //判断是否为正确文件
           if (Array.isArray(data)) {
             let inputanno = [];
             let inputweb = [];
             data.forEach((item, index) => {
-              //分情况导入
               if ('annotation' in item) {
                 if (item.annotation && item.date && item.color && item.context) {
-                  //标注导入
                   inputanno.push(item);
                 } 
               } else {
                 if ('url' in item) {
                   if (item.url && item.date){
-                    //web导入
                     inputweb.push(item);
                   }
                 }
@@ -301,7 +313,6 @@ importBtn.addEventListener('click', ()=> {
                 showNotice(`已导入${inputweb.length}个网页信息`);
               }
             }
-
           } else {
             wrongDocument();
           }

@@ -1,3 +1,22 @@
+/*
+ * Copyright (C) 2024 [Ayama].
+ * Author: Ayama (https://github.com/1818180)
+ * This file is part of [contextsaver].
+ *
+ * [contextsaver] is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * [contextsaver] is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with [contextsaver]. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 //工具函数
 function elementCreator(element, classlist, id) {
   const newelement = document.createElement(element);
