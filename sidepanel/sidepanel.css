@@ -1,0 +1,440 @@
+/* 侧边栏样式 */
+:focus-visible { outline-offset: 4px; }
+::-webkit-scrollbar { width: 5px; margin-left: 5px; }
+::-webkit-scrollbar-track { background-color: hsla(0, 0%, 98%, 0); }
+::-webkit-scrollbar-thumb { background-color: hsla(0, 0%, 89%, 0.394);  border-radius: 2.5px; }
+::-webkit-scrollbar-thumb:hover { background-color: hsla(0, 0%, 93%, 0.75);  border-radius: 2.5px; }
+
+/* 布局样式 */
+:root {
+    --color: #d2d2d2;
+    --color-line: #e3e3e3;
+    --yellow-dark:#f6ca89;
+    --yellow-medium:#f6ca8936;
+    --yellow-light:#f6ca8925;
+    --blue-dark:#a8bfeb;
+    --blue-medium:#a8c0eb4a;
+    --blue-light:#a8c0eb2f;
+    --green-dark:#b8dbaa;
+    --green-medium:#b8dbaa40;
+    --green-light:#b8dbaa30;
+    --red-dark:#da9989;
+    --red-medium:#da99894a;
+    --red-light:#da998933;
+    --purple-dark:#e3d0e7;
+    --purple-medium:#e3d0e75b;
+    --purple-light:#e3d0e748;
+    --davys-gray: hsl(0, 0%, 33%);
+
+    --border-black: black 3px soild;
+
+    --transition: all 0.2s ease-in;
+
+    --shadow-3D: 0 1px 1px #51360c1f, 0 2px 4px #5b411214, 0 4px 8px #4a2c0c1a, 0 8px 16px #34240509;
+  
+    --paper-grid: linear-gradient(0deg, transparent 24%, var(--color-line) 25%, var(--color-line) 26%, transparent 27%,transparent 74%, var(--color-line) 75%, var(--color-line) 76%, transparent 77%,transparent),
+      linear-gradient(90deg, transparent 24%, var(--color-line) 25%, var(--color-line) 26%, transparent 27%,transparent 74%, var(--color-line) 75%, var(--color-line) 76%, transparent 77%,transparent);
+      background-size: 55px 55px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+body {
+    color: var(--davys-gray);
+}
+
+.flex,
+.flex-row,
+.flex-column,
+.center,
+.btn  {
+    display: flex;
+    align-items: center;
+}
+
+.center {
+    justify-content: center;
+}
+
+.flex-row {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.locker {
+    width: 100%;
+    height: calc(100vh - 46px);
+    overflow-x: visible;
+    overflow-y: auto;
+}
+
+/* 按钮样式 */
+.icon svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--color);
+    transition: var(--transition);
+}
+.icon:hover svg {
+    fill: black;
+}
+.btn,
+.icon {
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: black;
+}
+
+.refresh:hover,
+.rightinfo .read-btn:hover {
+    font-weight: bold;
+    border: black 3px solid;
+    box-sizing: border-box;
+    transition: var(--transition);
+}
+
+/* 颜色样式 */
+.yellow_switch,
+.blue_switch,
+.green_switch,
+.red_switch,
+.purple_switch {
+    border-left: 3px solid;
+}
+
+.yellow_switch {
+    background-color: var(--yellow-light);
+    border-left-color: var(--yellow-dark);
+}
+
+.blue_switch {
+    background-color: var(--blue-light);
+    border-left-color: var(--blue-dark);
+}
+
+.green_switch {
+    background-color: var(--green-light);
+    border-left-color: var(--green-dark);
+}
+
+.red_switch {
+    background-color: var(--red-light);
+    border-left-color: var(--red-dark);
+}
+
+.purple_switch {
+    background-color: var(--purple-light);
+    border-left-color: var(--purple-dark);
+}
+
+.yellow,
+.blue,
+.green,
+.red,
+.purple,
+.alldata {
+    position: relative;
+    border-radius: 8px;
+    padding-inline: 2px;
+    box-shadow: var(--shadow-3D);
+    font-weight: bold;
+}
+.yellow {
+    background-color: var(--yellow-dark);
+}
+
+.blue {
+    background-color: var(--blue-dark);
+}
+
+.green {
+    background-color: var(--green-dark);
+}
+
+.red {
+    background-color: var(--red-dark);
+}
+
+.purple {
+    background-color: var(--purple-dark);
+}
+
+/* 日期选择面板 */
+.dateselector p,
+.refresh p,
+.datebox p {
+    margin: 0;
+    text-align: center;
+    width: fit-content;
+}
+
+.dateselector,
+.refresh {
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    border: rgb(197, 197, 197) 1px solid;
+    text-align: center;
+    font-size: medium;
+    color: rgb(197, 197, 197);
+    font-weight: lighter;
+}
+.dateselector {
+    padding-inline: 10px;
+}
+.refresh {
+    margin-top: 5px;
+}
+
+.date-nav,
+.datepanel {
+    gap: 5px;
+}
+
+.divider {
+    width: 1.5px;
+    height: 15px;
+    background-color: var(--color);
+}
+.datebox {
+    margin: 8px;
+    position: fixed;
+    top: 0;
+    width: calc(100vw - 16px);
+    height: calc(100vh - 16px);
+    background-color: white;
+    z-index: 10;
+}
+.articlebox {
+    height: calc(100vh - 46px);
+    overflow-x: visible;
+    overflow-y: auto;
+}
+
+.title-date {
+    padding: 3px 6px;
+    font-size: medium;
+    background-color: #000000;
+    border-radius: 15px;
+    margin: 35px;
+    color: var(--color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.title-date:hover {
+    color: white;
+}
+
+/* 标题样式 */
+.title,
+.title-date {
+    text-align: center;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.title {
+    font-size: x-large;
+    padding: 20px 6px 30px;
+}
+
+#notice {
+    text-align: center;
+    font-size: large;
+    color: var(--davys-gray);
+}
+
+/* button样式 */
+.data {
+    padding-bottom: 20px;
+    gap: 20px;
+}
+
+.alldata {
+    background-color: #E1E1E1;
+}
+
+.number,
+.sort {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: fit-content;
+}
+
+.detail_control {
+    width: 100%;
+    gap:20px;
+    padding-bottom: 30px;
+}
+
+.sort {
+    padding: 6px 10px;
+}
+
+.showboth,
+.onlynote {
+    background-color: #f0f0f0;
+    background-blend-mode: multiply;
+    border-left: rgb(125, 125, 125) 3px solid;
+}
+
+/* 卡片样式 */
+#content {
+    gap: 16px
+}
+
+.cardContainer {
+    margin-top: 20px;
+}
+
+.data,
+.detail_control,
+.cardContainer,
+.refresh,
+#notice,
+.articlebox,
+.dateselector {
+    max-width: 500px;
+    width: 100%;
+}
+
+/* context样式 */
+.onlycontext,
+.context,
+.showboth {
+    background-image: var(--paper-grid);
+    background-size: 30px 30px;
+}
+
+.context {
+    border-top: rgb(209, 188, 175) 2px dotted;
+    height: fit-content;
+    padding: 8px;
+    box-shadow: var(--shadow-3D);
+    margin: 10px 0;
+}
+
+.context_text {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    line-height: 25px;
+}
+
+/* 标注样式 */
+.anno_container {
+    text-align: center;
+}
+
+.anno_container p {
+    margin: 0;
+}
+
+.anno_text {
+    font-size: 13px;
+    font-weight: bold;
+    padding: 6px 0;
+}
+
+.anno_note {
+    padding-inline: 5px;
+    padding-bottom: 15px;
+}
+
+/* 面板卡片样式 */
+.web-container {  
+    height: 100px;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.read-cover {
+    height: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+    border: rgb(242, 242, 242) 5px solid;
+    box-shadow: var(--shadow-3D);
+  }
+.web-container .img-cover {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.rightinfo {
+    flex:1;
+    height: 100px;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.rightinfo div {
+    width: 100%;
+    height: 30px;
+}
+
+.annoCom {
+    flex: 1;
+}
+
+.rightinfo .read-btn {
+    transition: var(--transition-fast);
+    fill: var(--grey);
+    border-radius: 0 15px 15px 0;
+    border-left: var(--color) 2px dotted;
+    height: 30px;
+    padding: 3px 10px;
+    background-color: #f5f5f5;
+    gap: 8px;
+    max-width: 68px;
+    min-width: 68px;
+    box-sizing: border-box;
+}
+
+.rightinfo .read-btn:hover {
+    fill: #000000;
+}
+
+.titleCom {
+    max-height: 60px;
+    overflow-y: auto;
+}
+
+.web-container a {
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000000;
+    width: 100%;
+}
+.dateCom {
+    color: var(--grey);
+    font-size: small;
+}
+.web-container a,
+.web-container .read-icon,
+.web-container .dateCom {
+    line-height: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.colornumber {
+    height: 3px;
+}

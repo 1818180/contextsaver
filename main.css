@@ -1,0 +1,55 @@
+
+:root {
+    --color: #E1E1E1;
+    --grey: #b0b0b0;
+    --yellow-mark: #ffa946eb;
+    --transition: all 0.3s ease-in 0.1s;
+    --transition-fast: all 0.2s ease;
+  
+    --shadow-inner-yellow: inset 4px 5px 20px #ff9925, inset -2px -5px 30px #ffa946eb,
+                            inset -4px 0 rgb(255, 102, 0), inset 6px 0 rgb(255, 102, 0);
+    --shadow-inner-yellow: inset 4px 5px 20px #ff9925, inset -2px -5px 30px #ffa946eb,
+                            inset -4px 0 rgb(255, 102, 0), inset 6px 0 rgb(255, 102, 0);
+    --shadow-inner-yellow: inset 4px 5px 20px #ff9925, inset -2px -5px 30px #ffa946eb,
+                            inset -4px 0 rgb(255, 102, 0), inset 6px 0 rgb(255, 102, 0);
+    
+    --shadow-3D: 0 1px 1px #0000001f, 0 2px 4px #00000014, 0 4px 8px #0000001a, 0 8px 16px #00000014;
+  
+    --paper-grid: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+      background-size: 55px 55px;
+}
+
+.highlighted {
+color: rgb(238, 143, 18);
+font-weight: bold;
+}
+  
+.contextSaver {
+    position: relative;
+    border-radius: 8px;
+    padding-inline: 2px;
+    box-shadow: var(--shadow-3D);
+    pointer-events:all;
+}
+  
+.yellow {
+    background-color: #f6ca89;
+}
+  
+.blue {
+    background-color: #a8bfeb;
+}
+  
+.green {
+    background-color: #b8dbaa;
+}
+  
+.red {
+    background-color: #da9989;
+}
+  
+.purple {
+    background-color: #e3d0e7;
+}
+  

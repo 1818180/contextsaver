@@ -1,0 +1,51 @@
+{
+    "manifest_version": 3,
+    "name" : "ContextSaver",
+    "description": "auto save all the contexts of your highlighted vocabulary",
+    "version" : "1.0",
+    "icons" : {
+        "16": "images/context16.png",
+        "48": "images/context48.png",
+        "128": "images/context128.png"
+    },
+    "action" : {
+        "default_popup": "popup/popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "css": ["main.css"],
+            "js": ["scripts/content.js"],
+            "run_at": "document_end",
+            "all_frames": false
+        }
+    ],
+    "permissions": [
+        "contextMenus",
+        "sidePanel",
+        "activeTab",
+        "scripting",
+        "tabs",
+        "storage",
+        "downloads"
+    ],
+    "host_permissions": ["<all_urls>"],
+    "side_panel": {
+        "default_path": "sidepanel/sidepanel.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "web_accessible_resources": [
+        {
+            "matches":["<all_urls>"],
+            "resources": [
+                "scripts/*",
+                "images/icons/*",
+                "popup/*",
+                "sidepanel/*",
+                "src/*"
+            ]
+        }
+    ]
+}

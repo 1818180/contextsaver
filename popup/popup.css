@@ -1,0 +1,194 @@
+:root {
+    --grey: rgb(201, 201, 201);
+    --grey-light: rgba(237, 237, 237, 0.522);
+    --darkgrey: rgb(150, 150, 150);
+
+    --transition: all 0.3s ease 0.1s;
+    --shadow-3D: 0 1px 1px #51360c1f, 0 2px 4px #5b411214, 0 4px 8px #4a2c0c1a, 0 8px 16px #34240509;
+
+}
+
+
+body { width: 300px; padding: 0 10px; }
+button { width: 100%; padding: 10px; }
+
+.aboutme p{
+    margin: 0;
+}
+
+.container {
+    padding: 6px 0;
+    /* border: bisque 2px solid; */
+}
+
+/* 布局 */
+.flex,
+.flex-row,
+.flex-column,
+.center,
+.btn  {
+    display: flex;
+    align-items: center;
+}
+.center {
+   align-items:center ; 
+   justify-content: center;
+}
+.flex-row {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+#flex-control {
+    width: 100%;
+}
+
+.datalist,
+.setting-panel,
+.aboutme {
+    width: 300px;
+}
+
+
+.alldata,
+.todaydata {
+    width: 100%;
+    background-color: #fefaf6;
+    border-radius: 17px;
+}
+
+.annonumber,
+.urlnumber,
+.todaydata,
+.urlnumber {
+    display: flex;
+    flex-direction: row;
+    gap:3px;
+    min-width: 60px;
+}
+
+/* header */
+.logo {
+    justify-content: space-between;
+}
+
+.datalist {
+    gap: 8px;
+}
+
+.aboutme {
+    color: var(--grey);
+    font-size: 11px;
+    font-style: italic;
+}
+
+/* icon btn */
+.btn svg,
+.popup-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.btn svg {
+    fill: var(--darkgrey);
+}
+
+.aboutme .btn svg {
+    fill: var(--grey);
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.aboutme .btn {
+    width: 15px;
+}
+
+.popup-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-icon svg {
+    fill: rgb(255, 174, 93);
+}
+
+.media {
+
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.dateinfo {
+    width: 60px;
+    padding-inline: 8px 10px;
+    background-color: #fbecdb;
+    border-radius: 17px;
+}
+
+/* 数据导入导出 */
+.setting-panel {
+    display: flex;
+    margin-bottom: 10px;
+    border-bottom: var(--grey) 2px dotted;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out, height 0.4s ease-in-out;
+    height: fit-content;
+    overflow-y: hidden;
+}
+
+.setting-panel .popup-icon p,
+.setting-panel .popup-icon {
+    margin-left: 8px;
+}
+
+.setting-panel .popup-icon {
+}
+
+.setting-button,
+.setting-checkbox {
+    cursor: pointer;
+    background-color: var(--grey-light);
+    width:100%;
+    border-radius: 17px;
+    margin-bottom: 8px;
+}
+
+.checkbox {
+    width: 12px;
+    height: 12px;
+    border: rgb(255, 174, 93) 2px solid;
+    border-radius: 6px;
+    margin-right: 15px;
+    /* background-color: rgb(255, 174, 93); */
+}
+
+/* notice提示 */
+.notice-top {
+    position: fixed;
+    /* top: 17px; */
+    top: -20px;
+    width: 300px;
+    transition: var(--transition);
+    opacity: 0;
+    
+}
+
+.notice-text {
+    width: fit-content;
+    border: black 2px solid;
+    color: aliceblue;
+    background-color: black;
+    border-radius: 15px;
+    box-shadow: var(--shadow-3D);
+}
+.notice-text p {
+    margin: 5px 8px;
+    font-weight: bold;
+}
