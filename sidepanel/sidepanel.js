@@ -556,7 +556,9 @@ function updateOneWeekWeb(targeturllist) {
   contentDBProceer(objweb,'getsome',urlinfo.url).then(webinfo => {
     if (webinfo) {
       coverelement.src = webinfo['img'] ? webinfo['img'] : imgplace;
-    } 
+    } else {
+      coverelement.src = imgplace;
+    }
   });
   //数据库返回标注信息
   getOneInfo('url', urlinfo.url).then(urlannolist => {
