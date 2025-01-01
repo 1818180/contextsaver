@@ -573,7 +573,6 @@ function findTextRange(element, text, textindex, textcontext) {
   }
 }
 function resetAnno(context, annotation, color, date, index) {
-  // 找到包含完整 context 的最小元素
   const targetElement = findSmallestContainingElement(context);
   if (targetElement) {
     const annorange = findTextRange(targetElement, annotation, index, context);
@@ -677,8 +676,6 @@ function addAnnotation(info) {
     {
       type: "addData",
       annoinfo: info
-    },
-    function(response) {
     }
   )
 }
@@ -695,6 +692,9 @@ function elementClose(element) {
   element.classList.add('nodisplay');
   element.classList.remove('flex');
   element.style.opacity = 0;
+  if (element != colorPicker) {
+    element.style.display = '';
+  }
 }
 
 function panelControl(element,condition) {
@@ -720,7 +720,6 @@ function displayControl(element) {
 
 const colorPicker = elementCreator('div', [], 'text-color-picker');
 elementClose(colorPicker);
-
 const popup = elementCreator('div',[],'popupmanu');
 elementClose(popup);
 shadowRoot.appendChild(popup);
