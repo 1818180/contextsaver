@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name" : "ContextSaver",
-    "description": "auto save all the contexts of your highlighted vocabulary",
+    "description": "A context-based language learning tool that saves highlighted vocabulary and its context for effective reading and learning.",
     "version" : "1.0",
     "icons" : {
         "16": "images/context16.png",

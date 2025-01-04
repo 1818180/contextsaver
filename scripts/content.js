@@ -972,6 +972,7 @@ function showPopup(annoevent) {
 
     //右侧工具栏
     const meaningToolBox = elementCreator('div',['flex-row','meaningToolBox']);
+    meaningToolBox.style.display = '';
     const toolIcon = elementCreator('div',['icon']);
     const editIcon = elementCreator('div',['icon']);
     const deleteIcon = elementCreator('div',['icon']);
@@ -1029,6 +1030,7 @@ function showPopup(annoevent) {
         meaningspan.innerText = inputValue;
         meaninglabel.style.display = 'flex';
         meaningedit.style.display = 'none';
+        meaningToolBox.style.display = '';
       }
     });
     //一键修改语义
@@ -1042,8 +1044,10 @@ function showPopup(annoevent) {
         const meaningspan = meanheader.querySelector('.meaningspan');
         meaningedit.style.display = 'flex';
         meaningedit.value = meaningspan.innerText;
-        meaningedit.style.width = `${editwidth}px`;
+        meaningedit.style.width = `${editwidth + 80}px`;
+        meaningedit.style.maxWidth = `${window.innerWidth - parseFloat(popup.style.left) - 45}px`;
         meaninglabel.style.display = 'none';
+        meaningToolBox.style.display = 'none';
       }
     })
     

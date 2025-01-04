@@ -212,7 +212,7 @@ textarea {
   flex: 1;
   border: none;
   max-height: 300px;
-  resize: vertical;
+  resize: both;
 }
 
 textarea:focus {
