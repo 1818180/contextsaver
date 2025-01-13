@@ -15,13 +15,14 @@
 ---
 ### 插件概览
 
-![image1](images\read\image (4).png)
+![image](images/read/image1.png)
 
-![image1](images\read\image (5).png)
+![image](images/read/image2.png)
 
-![image1](images\read\image (6).png)
+![image](images/read/image3.png)
 
-![image1](images\read\image (7).png)
+![image](images/read/image4.png)
 
-![image1](images\read\image (8).png)
- 
+![image](images/read/image5.png)
+
+![image](images/read/image6.png)
