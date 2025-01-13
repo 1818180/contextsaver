@@ -3,7 +3,7 @@
 
  详细介绍请看notion页面：https://lumbar-jodhpur-278.notion.site/Context-Saver-168ce30c09ad8024a100cd5ddf111365?pvs=74
 
-**（最新动态请关注作者小红书🎈）**
+**（最新动态请关注作者小红书👉 [Ayamaya](https://www.xiaohongshu.com/user/profile/64969aea000000000f007310?xsec_token=YBUMKxoi61sBFO62A5xm58n8Hf9gGHvsQ_js60n_pwDZ4=&xsec_source=app_share&xhsshare=CopyLink&appuid=64969aea000000000f007310&apptime=1735621342&share_id=c68eb135be84491da8a760fcb304f7f7) ）**
 
 ---
 
